@@ -3,7 +3,7 @@ console.log(buttonEl);
 
 buttonEl.addEventListener("click", function () {
 
-    // Start Timer 
+    // Start Timer and Quiz
 
     var time = 90;
 
@@ -67,7 +67,22 @@ var questions = [
         correctAnswer: 'D. All of the above'
     
 
-    }
+    },
+  ];
+    
+    document.getElementById('start').addEventListener ('click', function()
+      { function startQuestion() {
+         var question = questions[currentQuestion];
+       
+          document.getElementById('question').innerHTML = question.name;
+          for (var i=0; i < questions[currentQuestion].answers.length; i+
+           var button = document.createElement('button')
+           button.innerHTML = questions[currentQuestion].answers[i];
 
-    }
-    } 
+        // Add Button to answer div
+
+
+    
+    
+    
+    // Create For loop so that clock subtracts when incorrect 

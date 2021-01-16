@@ -77,35 +77,64 @@ var questions = [
 buttonEl.addEventListener("click", function () {
 
     var question = questions[currentQuestion];
-    console.log("in display questions", question)
+    console.log("in display questions", questions)
     document.getElementById('question').innerHTML = question.name;
     document.getElementById('answer').innerHTML = question.answers[0];
     document.getElementById('answerb').innerHTML = question.answers[1];
     document.getElementById('answerc').innerHTML = question.answers[2];
     document.getElementById('answerd').innerHTML = question.answers[3];
-    for (var i = 0; i < questions[i].length; i++) {
-    console.log(questions[i])
-        var button = document.createElement('button');
-        
-        document.getElementById('answer').innerHTML = question.answers;
-
-    
   
 
-    }
+
+}) 
+
+    function secondQuestion() {
+
+    var question = questions[currentQuestion];
+    console.log("in display questions", questions)
+    document.getElementById('question').innerHTML = question.name;
+    document.getElementById('answer').innerHTML = question.answers[0];
+    document.getElementById('answerb').innerHTML = question.answers[1];
+    document.getElementById('answerc').innerHTML = question.answers[2];
+    document.getElementById('answerd').innerHTML = question.answers[3];
+  
+
+
+}
+
+var answerbutton = document.querySelector("#answer"); 
+var answerbuttonb = document.querySelector("#answerb");
+var answerbuttonc = document.querySelector("#answerc");
+var answerbuttond = document.querySelector("answerd");
+
+
+answerbutton.addEventListener("click", function () {
+    var question = questions[currentQuestion];
+if (answerbutton===question.correctAnswer){ 
+    alert("Correct!") 
+    secondQuestion()
+    currentQuestion += 1;
+    
+    
+}
+
+else {
 
 
 
 
 
-    document.getElementById('timer').innerText = time;
+
+
+    alert("incorrect!")
+console.log(answerbutton)
+
+    currentQuestion += 1;
+    secondQuestion()
+
+
+
+}
 
 
 })
-
-
-
-
-
-
-

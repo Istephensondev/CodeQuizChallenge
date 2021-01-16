@@ -1,11 +1,9 @@
 var buttonEl = document.querySelector("#start");
 console.log(buttonEl);
 
-var time = 90
-
 buttonEl.addEventListener("click", function () {
 
-    // Start Timer and Quiz
+// Start Timer and Quiz
 
     var time = 90;
 
@@ -31,7 +29,7 @@ var questions = [
         correctAnswer: 'C. parenthesis',
     },
     {
-        // Second Question
+    // Second Question
 
         name: 'Commonly used data types do NOT include:',
         answers: [
@@ -44,8 +42,8 @@ var questions = [
 
     },
     {
-        // Third Question
-
+    // Third Question
+        
         name: ' String variabes must be enclosed within ___________ when being assigned to variables.',
         answers: [
             'A. commas',
@@ -57,7 +55,7 @@ var questions = [
 
     },
     {
-        // Fourth Questions 
+    // Fourth Questions 
 
         name: 'Arrays in JavaScript can be used to store ___________.',
         answers: [
@@ -67,45 +65,31 @@ var questions = [
             'D. all of the above'
         ],
         correctAnswer: 'D. All of the above',
-
+    
 
     },
-];
+  ];
 
-// Display Questions 
+    // Display Questions 
 
-buttonEl.addEventListener("click", function () {
+    document.getElementById('start').addEventListener ('click', function()
+      { function startQuestion() {
+         var question = questions[currentQuestion];
+       
+          document.getElementById('question').innerHTML = question.name;
+          for (var i = 0; i < questions[currentQuestion].length; i++) 
+          {
+           var button = document.createElement('button');
+           button.innerHTML = questions[currentQuestion].answers[i];
+          }
 
-    var question = questions[currentQuestion];
-    console.log("in display questions", question)
-    document.getElementById('question').innerHTML = question.name;
-    document.getElementById('answer').innerHTML = question.answers[0];
-    document.getElementById('answerb').innerHTML = question.answers[1];
-    document.getElementById('answerc').innerHTML = question.answers[2];
-    document.getElementById('answerd').innerHTML = question.answers[3];
-    for (var i = 0; i < questions[i].length; i++) {
-    console.log(questions[i])
-        var button = document.createElement('button');
         
-        document.getElementById('answer').innerHTML = question.answers;
-
+    // Add Button to Answer Div
     
+    document.getElementById('answer').appendChild(button)
+     { currentQuestion += 1;
+     startQuestion();
+}   
   
-
-    }
-
-
-
-
-
-    document.getElementById('timer').innerText = time;
-
-
-})
-
-
-
-
-
-
-
+    
+  // Create For loop so that clock subtracts when incorrect 
